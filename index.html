@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mega Event Registration</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+overflow-x:hidden;
+background:linear-gradient(-45deg,#6a11cb,#2575fc,#00c9ff,#92fe9d);
+background-size:400% 400%;
+animation:bgAnimation 12s ease infinite;
+}
+
+@keyframes bgAnimation{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.bubble{
+position:fixed;
+bottom:-100px;
+border-radius:50%;
+background:rgba(255,255,255,0.2);
+animation:float linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+.container{
+width:100%;
+max-width:1000px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:25px;
+box-shadow:0 8px 32px rgba(0,0,0,0.3);
+color:white;
+}
+
+h1{
+text-align:center;
+margin-bottom:25px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.field{
+display:flex;
+flex-direction:column;
+}
+
+label{
+margin-bottom:5px;
+font-weight:600;
+}
+
+input,select,textarea{
+padding:12px;
+border:none;
+border-radius:10px;
+outline:none;
+}
+
+textarea{
+resize:none;
+}
+
+button{
+width:100%;
+margin-top:20px;
+padding:15px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:#00ffcc;
+color:#000;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.03);
+background:#00e6b8;
+}
+
+#result{
+display:none;
+margin-top:20px;
+background:white;
+color:green;
+padding:15px;
+border-radius:10px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<40;i++){
+let bubble=document.createElement("div");
+bubble.className="bubble";
+bubble.style.left=Math.random()*100+"%";
+bubble.style.width=Math.random()*30+10+"px";
+bubble.style.height=bubble.style.width;
+bubble.style.animationDuration=(Math.random()*10+10)+"s";
+document.body.appendChild(bubble);
+}
+</script>
+
+<div class="container">
+
+<h1> Mega Event Registration Form</h1>
+
+<form id="eventForm">
+
+<div class="grid">
+
+<div class="field">
+<label>Full Name</label>
+<input type="text" required>
+</div>
+
+<div class="field">
+<label>Email</label>
+<input type="email" required>
+</div>
+
+<div class="field">
+<label>Phone Number</label>
+<input type="tel">
+</div>
+
+<div class="field">
+<label>Alternate Phone</label>
+<input type="tel">
+</div>
+
+<div class="field">
+<label>Date of Birth</label>
+<input type="date">
+</div>
+
+<div class="field">
+<label>Age</label>
+<input type="number">
+</div>
+
+<div class="field">
+<label>Gender</label>
+<select>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="field">
+<label>Blood Group</label>
+<select>
+<option>A+</option>
+<option>B+</option>
+<option>O+</option>
+<option>AB+</option>
+</select>
+</div>
+
+<div class="field">
+<label>College Name</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Department</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Year of Study</label>
+<select>
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+</select>
+</div>
+
+<div class="field">
+<label>Roll Number</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>City</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>State</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Country</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Pincode</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Event Category</label>
+<select>
+<option>Hackathon</option>
+<option>Workshop</option>
+<option>Sports</option>
+<option>Cultural</option>
+<option>Technical Quiz</option>
+</select>
+</div>
+
+<div class="field">
+<label>Team Size</label>
+<input type="number">
+</div>
+
+<div class="field">
+<label>Emergency Contact</label>
+<input type="tel">
+</div>
+
+<div class="field">
+<label>Parent Name</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>LinkedIn Profile</label>
+<input type="url">
+</div>
+
+<div class="field">
+<label>GitHub Profile</label>
+<input type="url">
+</div>
+
+<div class="field">
+<label>T-Shirt Size</label>
+<select>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+</div>
+
+<div class="field">
+<label>Food Preference</label>
+<select>
+<option>Veg</option>
+<option>Non-Veg</option>
+<option>Vegan</option>
+</select>
+</div>
+
+<div class="field">
+<label>Skills</label>
+<input type="text">
+</div>
+
+</div>
+
+<div class="field" style="margin-top:15px;">
+<label>Address</label>
+<textarea rows="4"></textarea>
+</div>
+
+<div class="field" style="margin-top:15px;">
+<label>Why do you want to participate?</label>
+<textarea rows="4"></textarea>
+</div>
+
+<button type="submit">
+ Submit Registration
+</button>
+
+</form>
+
+<div id="result">
+✅ Registration Submitted Successfully!
+</div>
+
+</div>
+
+<script>
+document.getElementById("eventForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+document.getElementById("result").style.display="block";
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+});
+</script>
+
+</body>
+</html>
